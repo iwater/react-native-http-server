@@ -5,6 +5,10 @@
   "description": "modified nodejs http module for react-native to create http-server on device",
   "type": "module",
   "main": "http.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iwater/react-native-http-server.git"
+  },
   "packageManager": "yarn@3.2.2",
   "peerDependencies": {
     "react-native-tcp-socket": "~6.0.2",
