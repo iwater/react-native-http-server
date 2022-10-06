@@ -10,6 +10,8 @@ $ yarn add @iwater/react-native-http-server react-native-tcp-socket @craftzdog/r
 
 ## API
 
+### use plain http server
+
 ```js
 import http from '@iwater/react-native-http-server';
 
@@ -19,5 +21,49 @@ const server = http.createServer((req, res) => {
   res.end('Hello React Native!');
 });
 
+server.listen({ port: 12345, host: '0.0.0.0' });
+```
+
+### use Koa
+
+install other deps
+
+```sh
+$ yarn add koa readable-stream react-native-quick-crypto @iwater/react-native-destroy
+```
+
+modify index.js
+
+```js
+global.Buffer = require("@craftzdog/react-native-buffer").Buffer;
+```
+
+modify metro.config.js
+
+```js
+module.exports = {
+  resolver: {
+    extraNodeModules: {
+      stream: require.resolve('readable-stream'),
+      net: require.resolve('react-native-tcp-socket'),
+      http: require.resolve('@iwater/react-native-http-server'),
+      crypto: require.resolve('react-native-quick-crypto'),
+      destroy: require.resolve('@iwater/react-native-destroy'),
+    }
+  },
+};
+```
+
+```js
+import http from '@iwater/react-native-http-server';
+
+const app = new Koa();
+
+// response
+app.use(ctx => {
+  ctx.body = 'Hello Koa';
+});
+
+const server = http.createServer(app.callback());
 server.listen({ port: 12345, host: '0.0.0.0' });
 ```
