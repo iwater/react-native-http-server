@@ -29,7 +29,7 @@ server.listen({ port: 12345, host: '0.0.0.0' });
 install other deps
 
 ```sh
-$ yarn add koa readable-stream react-native-quick-crypto @iwater/react-native-destroy
+$ yarn add koa readable-stream
 ```
 
 modify index.js
@@ -47,11 +47,22 @@ module.exports = {
       stream: require.resolve('readable-stream'),
       net: require.resolve('react-native-tcp-socket'),
       http: require.resolve('@iwater/react-native-http-server'),
-      crypto: require.resolve('react-native-quick-crypto'),
-      destroy: require.resolve('@iwater/react-native-destroy'),
     }
   },
 };
+```
+
+modify package.json
+
+```js
+  "resolutions": {
+    "keygrip": "npm:@iwater/react-native-keygrip@^1.1.1",
+    "destroy": "npm:@iwater/react-native-destroy@^1.2.0"
+  },
+```
+
+```sh
+$ yarn
 ```
 
 ```js
