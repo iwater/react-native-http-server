@@ -39,7 +39,7 @@ function isUint8Array(value) {
 const EE = require('events');
 const Buffer = require("@craftzdog/react-native-buffer").Buffer;
 
-const Stream = require('readable-stream');
+const Stream = require('@iwater/react-native-stream');
 
 import { kOutHeaders, utcDate, kNeedDrain } from './internal/http';
 import {codes} from './internal/errors';

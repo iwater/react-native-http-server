@@ -23,7 +23,7 @@
 
 const ObjectSetPrototypeOf = Object.setPrototypeOf;
 
-const Stream = require('readable-stream');
+const Stream = require('@iwater/react-native-stream');
 
 export function readStart(socket) {
   if (socket && !socket._paused && socket.readable)

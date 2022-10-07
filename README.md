@@ -29,7 +29,7 @@ server.listen({ port: 12345, host: '0.0.0.0' });
 install other deps
 
 ```sh
-$ yarn add koa readable-stream
+$ yarn add koa @iwater/react-native-stream
 ```
 
 modify index.js
@@ -44,7 +44,7 @@ modify metro.config.js
 module.exports = {
   resolver: {
     extraNodeModules: {
-      stream: require.resolve('readable-stream'),
+      stream: require.resolve('@iwater/react-native-stream'),
       net: require.resolve('react-native-tcp-socket'),
       http: require.resolve('@iwater/react-native-http-server'),
     }
