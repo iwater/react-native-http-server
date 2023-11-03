@@ -14,11 +14,12 @@
   "packageManager": "yarn@3.2.2",
   "peerDependencies": {
     "@craftzdog/react-native-buffer": "~6.0.5",
-    "react-native-tcp-socket": "~6.0.2"
+    "react-native-tcp-socket": "~6.0.6"
   },
   "dependencies": {
     "@iwater/react-native-stream": "^4.2.0",
     "events": "^3.3.0",
+    "assert": "^2.1.0",
     "http-parser-js": "^0.5.8"
   }
 }
