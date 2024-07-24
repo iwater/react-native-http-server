@@ -785,7 +785,9 @@ OutgoingMessage.prototype.end = function end(chunk, encoding, callback) {
       this.connection._httpMessage === this) {
     this._finish();
   }
-
+  if (this.socket) {
+    this.socket.end();
+  }
   return this;
 };
 
