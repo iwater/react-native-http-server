@@ -1,3 +1,7 @@
+# Try this
+new http server for react native power by nitro & rust for performance
+https://github.com/iwater/react-native-nitro-http-server
+
 # react-native-http-server
 
 Cut off from NodeJS core and modified for running in react-native envs
